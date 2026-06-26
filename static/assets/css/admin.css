@@ -100,6 +100,95 @@ a {
     line-height: 1.1;
 }
 
+.dashboard-panel {
+    background: #fff;
+    margin-top: 18px;
+    padding: 18px;
+}
+
+.dashboard-panel h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.dashboard-panel p {
+    margin: 6px 0;
+}
+
+.version-panel {
+    display: grid;
+    grid-template-columns: minmax(240px, .85fr) minmax(360px, 1.15fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.version-summary {
+    min-width: 0;
+}
+
+.version-control {
+    min-width: 0;
+}
+
+.version-settings,
+.version-actions,
+.version-upload {
+    display: grid;
+    gap: 10px;
+}
+
+.version-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.version-button-row button,
+.version-button-row .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.version-settings {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.version-actions {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.version-progress {
+    display: grid;
+    gap: 8px;
+    padding: 10px;
+    background: #f7f8f6;
+    border: 1px solid #e6e8e4;
+}
+
+.version-progress[hidden] {
+    display: none;
+}
+
+.version-progress progress {
+    width: 100%;
+    height: 18px;
+}
+
+.version-progress div {
+    color: #555;
+    word-break: break-word;
+}
+
+.version-actions button:disabled {
+    background: #b7bdb1;
+    cursor: not-allowed;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -297,6 +386,33 @@ textarea {
     height: auto;
 }
 
+.webdav-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.webdav-actions .inline {
+    display: inline-flex;
+    margin: 0;
+}
+
+.webdav-restore-panel {
+    display: none;
+    grid-template-columns: minmax(130px, 180px) minmax(150px, 1fr) auto;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+    padding: 10px;
+    background: #f7f8f6;
+    border: 1px solid #e6e8e4;
+}
+
+.webdav-restore-panel.is-open {
+    display: grid;
+}
+
 @media (max-width: 1100px) {
     .cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -415,6 +531,27 @@ textarea {
         font-size: 28px;
     }
 
+    .dashboard-panel {
+        margin-top: 12px;
+        padding: 14px;
+        border: 1px solid #eee;
+    }
+
+    .version-panel {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .version-button-row {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .version-button-row button,
+    .version-button-row .btn {
+        width: 100%;
+    }
+
     table {
         display: block;
         overflow-x: auto;
@@ -474,6 +611,63 @@ textarea {
     .btn,
     button {
         min-height: 40px;
+    }
+
+    .webdav-table {
+        display: table;
+        overflow: visible;
+        white-space: normal;
+        border: 0;
+        background: transparent;
+    }
+
+    .webdav-table tbody,
+    .webdav-table tr {
+        min-width: 0;
+    }
+
+    .webdav-table thead,
+    .webdav-table th {
+        display: none;
+    }
+
+    .webdav-table tr {
+        display: block;
+        background: #fff;
+        border: 1px solid #eee;
+        margin: 0 0 12px;
+        padding: 8px 10px;
+    }
+
+    .webdav-table td {
+        display: grid;
+        grid-template-columns: 86px minmax(0, 1fr);
+        gap: 8px;
+        border: 0;
+        padding: 7px 0;
+        align-items: start;
+    }
+
+    .webdav-table td:before {
+        content: attr(data-label);
+        color: #777;
+        font-size: 13px;
+    }
+
+    .webdav-actions {
+        gap: 7px;
+    }
+
+    .webdav-restore-panel {
+        grid-template-columns: 1fr;
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .webdav-restore-panel input,
+    .webdav-restore-panel select,
+    .webdav-restore-panel button {
+        width: 100%;
     }
 }
 
