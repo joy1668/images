@@ -189,6 +189,65 @@ a {
     cursor: not-allowed;
 }
 
+.dashboard-theme-panel {
+    display: grid;
+    grid-template-columns: minmax(220px, .8fr) minmax(320px, 1.2fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.theme-dashboard-summary,
+.theme-dashboard-form {
+    min-width: 0;
+}
+
+.theme-dashboard-form {
+    display: grid;
+    gap: 10px;
+}
+
+.backup-panel {
+    display: grid;
+    grid-template-columns: minmax(220px, .8fr) minmax(320px, 1.2fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.backup-summary,
+.backup-options {
+    min-width: 0;
+}
+
+.backup-options {
+    display: grid;
+    gap: 10px;
+}
+
+.theme-dashboard-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #666;
+}
+
+.theme-dashboard-meta span {
+    background: #f3f5f2;
+    border: 1px solid #e7eae4;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+
+.theme-dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.theme-dashboard-actions .secondary {
+    background: #475569;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -537,7 +596,9 @@ textarea {
         border: 1px solid #eee;
     }
 
-    .version-panel {
+    .version-panel,
+    .dashboard-theme-panel,
+    .backup-panel {
         grid-template-columns: 1fr;
         gap: 12px;
     }
@@ -550,6 +611,17 @@ textarea {
     .version-button-row button,
     .version-button-row .btn {
         width: 100%;
+    }
+
+    .theme-dashboard-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .theme-dashboard-actions .btn,
+    .theme-dashboard-actions button {
+        width: 100%;
+        text-align: center;
     }
 
     table {
